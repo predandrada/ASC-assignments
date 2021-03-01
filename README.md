@@ -5,13 +5,13 @@ This repository contains the assignments from my Computer Systems Architecture c
 - assignment 1
 - another approach to the Producer-Consumer problem 
 - implemented using locks
-- further information in /marketplace/README.md
+- further information [marketplace/README.md](here)
 
 ## Optimization
 - assignment 2
 - focused on marix multiplication
 - contains several cache & compiler techniques
-- further information in /optimization/README.md
+- further information [optimization/README.md](here)
 
 ## CUDA Hashtable
 - assignment 3
