@@ -1,25 +1,23 @@
-Computer Systems Architecture -- Assignment 1
+# Computer Systems Architecture -- Assignment 1
 
+## Overview
 I chose to implement the solution with locks. Their usage is quite straightforward: every time a certain resource is needed, the current thread will lock it until its job is done.
 In this case, 2 locks are needed: one for the actions of a producer, and another for a consumer.
 
-Producer:
+## Producer
     - first and foremost the producer registers to the marketplace;
     - the producer will try to publish their products until there is nothing left, therefore "while 1" is needed;
     - the products will be published one by one until the quantity in the input is reached.
 
-Consumer:
+## Consumer
     - a consumer will go through all the operations that define the carts;
     - the type of the current operation will define the method to be called (add/remove from cart)
     - when all the operations in a cart are finished, the items will be ordered and printed.
 
-Marketplace:
-    I added the following:
-        - producer_lock;
-        - consumer_lock;
-        - prod_queue: a list of producer lists;
-        - cons_carts: a list of carts.
+## Marketplace
+    - I updated the given structure by adding the following: producer_lock, consumer_lock, prod_queue (a list of producer lists), cons_carts (a list of carts).
 
+## Main logic
     Both producer lists and carts will contain elements in the form of dictionaries, containing the product and its producer, for easier data manipulation.
     To give an example, for 2 registered producers who published 2 products, prod_queue will look like this:
          [
@@ -45,4 +43,3 @@ Marketplace:
     place_order:
         - the cart contains dictionaries out of which only the 'product' fields are of interest;
         - the data in those fields are selected and put into a list which is returned.
-
